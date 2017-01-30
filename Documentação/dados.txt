@@ -1,0 +1,189 @@
+MouseUp
+FileName = "[sair-verde.png]"	
+	SetFocus()	
+
+MouseDown
+
+	'Seta imagem
+	FileName = "[sair-azul.png]"	
+	'Seta Foco
+	SetFocus()	
+	Screen.Close(0)	
+
+
+
+
+FileName = "[salvar_verde1.png]"	
+	SetFocus()
+
+
+
+	'Seta imagem
+	FileName = "[salvar_azul.png]"	
+	'Seta Foco
+	SetFocus()
+
+	'Seta variável VHoraLigar com os dados da propriedade
+	VHoraLigar = XCCalendario.Fonte.HoraLigar 
+	'Escreve na propriedade o valor do objeto
+	XCCalendario.Fonte.XOHoraLigar.WriteEx VHoraLigar
+	
+	'Seta variável VMinutoLigar com os dados da propriedade
+	VMinutoLigar = XCCalendario.Fonte.MinutoLigar 
+	'Escreve na propriedade o valor do objeto
+	XCCalendario.Fonte.XOMinutoLigar.WriteEx VMinutoLigar
+		
+	'Seta variável VDiaLigar com os dados da propriedade
+	VDiaLigar = XCCalendario.Fonte.DiaLigar 
+	'Escreve na propriedade o valor do objeto
+	XCCalendario.Fonte.XODiaLigar.WriteEx VDiaLigar
+	
+	'Seta variável VHoraDesligar com os dados da propriedade
+	VHoraDesligar = XCCalendario.Fonte.HoraDesligar 
+	'Escreve na propriedade o valor do objeto
+	XCCalendario.Fonte.XOHoraDesligar.WriteEx VHoraDesligar
+	
+	'Seta variável VMinutoDesligar com os dados da propriedade
+	VMinutoDesligar = XCCalendario.Fonte.MinutoDesligar 
+	'Escreve na propriedade o valor do objeto
+	XCCalendario.Fonte.XOMinutoDesligar.WriteEx VMinutoDesligar
+	
+	'Seta variável VDiaDesligar com os dados da propriedade
+	VDiaDesligar = XCCalendario.Fonte.DiaDesligar 
+	'Escreve na propriedade o valor do objeto
+	XCCalendario.Fonte.XODiaDesligar.WriteEx VDiaDesligar
+
+
+
+Botão Chama Gráficos
+'Application.DoModal "TelaConfiguracoes", "Configurações", 0, 0, , , Arg, 1 + 2 + 64 + 2048
+	Application.GetFrame("Direito").OpenScreen("TelaGraficoTemp1"),0
+
+
+Botão Salvar -- BAlcão quente
+
+MouseDown
+
+FileName = "[salvar_verde_pq.png]"
+	SetFocus()
+
+-----
+MouseUp
+FileName = "[salvar_azul.png]"
+	SetFocus()
+
+		
+-----
+
+
+
+
+Botão Avançado -- Balcão Quente
+
+MouseDown
+FileName = "[avancado_verde_pq.png]"
+	SetFocus()	
+
+
+MouseUp
+FileName = "[avancado_azul_pq.png]"
+
+Application.DoModal "TelaConfiguracoes", "Configurações", 0, 0, , , Arg, 1 + 2 + 64 + 2048
+'Application.GetFrame("Direito").OpenScreen("TelaGraficoTemp"),0
+
+
+
+
+--Grafico
+
+FileName = "[graficos_azul.png]"	
+	SetFocus()	
+'Application.DoModal "TelaConfiguracoes", "Configurações", 0, 0, , , Arg, 1 + 2 + 64 + 2048
+	Application.GetFrame("Direito").OpenScreen("TelaGraficoTemp"),0
+
+
+
+
+FileName = "[graficos_verde.png]"	
+	SetFocus()	
+
+
+
+Consulta
+
+SELECT temperatura.TemperaturaB1 AS [Temperatura Balcão 1]
+	  ,temperatura.TemperaturaB2 AS [Temperatura Balcão 2]
+	  ,temperatura.TemperaturaB3 AS [Temperatura Balcão 3]
+	  ,temperatura.TemperaturaB4 AS [Temperatura Balcão 4] 
+FROM temperatura 
+WHERE E3TimeStamp between #<%DataInicial%># AND #<%DataFinal%>#
+
+
+
+
+
+
+
+
+	'Referencia os SetPoints
+	DataIni = Screen.Item("txtDataInicial").Value 
+	DataFim = Screen.Item("txtDataFinal").Value 
+	Set consulta = Screen.Item("E3Chart1").Item("Consulta1")
+		
+	'Configura as variáveis da Consulta
+	consulta.SetVariableValue "DataInicial", DataIni
+	consulta.SetVariableValue "DataFinal", DataFim
+
+
+
+84oVRt3c0n29I 
+
+
+
+
+----------------------------------------------------
+
+XCConfigAvancado.Fonte.OffSetSensor
+XCBalcaoQuente.Fonte.SetPointTempInterna
+
+XO
+OffSetSensor
+
+
+
+
+
+
+
+
+BAlcão
+283 W
+476 H
+
+Indexada
+491 H
+437 W
+
+botões
+37 H
+120 W
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
