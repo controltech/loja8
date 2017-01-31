@@ -1,0 +1,3 @@
+Conversão pixel Himetric
+
+HIMETRIC = (PIXEL * 2540) / 96
